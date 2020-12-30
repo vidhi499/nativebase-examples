@@ -18,8 +18,10 @@ import {
   DrawerItem,
 } from "@react-navigation/drawer";
 import { NavigationContainer } from "@react-navigation/native";
-import Settings from "./src/components/Settings";
+import Settings from "./src/screens/Settings";
 import ChooseDestination from "./src/components/ChooseDestination";
+import Map from "./src/screens/Map";
+import { customTheme } from "./src/theme/CustomTheme";
 
 function HomeScreen() {
   return (
@@ -89,13 +91,14 @@ const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
-    <NativeBaseProvider>
+    <NativeBaseProvider theme={customTheme}>
       <NavigationContainer>
         <Drawer.Navigator
           drawerContent={(props) => <CustomDrawerContent {...props} />}
-          initialRouteName="Your Trips"
+          initialRouteName="Main"
         >
-          <Drawer.Screen name="Your Trips" component={HomeScreen} />
+          <Drawer.Screen name="Main" component={Map} />
+          <Drawer.Screen name="Your Trips" component={Map} />
           <Drawer.Screen name="Help" component={HomeScreen} />
           <Drawer.Screen name="Wallet" component={ChooseDestination} />
           <Drawer.Screen name="Settings" component={Settings} />

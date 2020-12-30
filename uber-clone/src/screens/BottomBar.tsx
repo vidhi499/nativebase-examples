@@ -16,7 +16,7 @@ import {
 
 export default function BottomBar() {
   return (
-    <Box width="100%" bg="white" zIndex={2} height="30%">
+    <Box width="100%" bg="white" zIndex={2} bottom={0} position="absolute">
       <Box width="100%" bg="primaryDark" borderRadius="5px" py={5} px={5}>
         <VStack space={2}>
           <Text
@@ -88,8 +88,8 @@ export default function BottomBar() {
           </Row>
         </VStack>
       </Box>
-      <Box bg="primary" p={5} px={8}>
-        <HStack space={32} ml={20}>
+      <Box bg="primary" py={3} px={8}>
+        <HStack space={32} mt={1} ml={20}>
           <IconButton
             variant="ghost"
             icon={
