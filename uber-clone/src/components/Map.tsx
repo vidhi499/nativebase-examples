@@ -1,9 +1,9 @@
 import * as React from "react";
 import MapView from "react-native-maps";
-//import { MapView } from "expo";
-import { StyleSheet, Text, View, Dimensions } from "react-native";
+import { StyleSheet } from "react-native";
 import * as Location from "expo-location";
-import { Box } from "native-base";
+import BottomBar from "./BottomBar";
+import AppNavigator from "../../../swiggy-clone/src/navigation/AppNavigator";
 
 export default function Map() {
   const [location, setLocation] = React.useState({});
@@ -28,8 +28,14 @@ export default function Map() {
   } else if (location) {
     text = JSON.stringify(location);
   }
+
+  const onRegionChangeComplete = async () => {
+    let location = await Location.getCurrentPositionAsync({});
+    setLocation(location);
+  };
+
   return (
-    <Box>
+    <>
       <MapView
         style={styles.map}
         initialRegion={{
@@ -40,21 +46,16 @@ export default function Map() {
         }}
         showsUserLocation={true}
         provider="google"
-      />
-      <Text>{text}</Text>
-    </Box>
+        onRegionChangeComplete={onRegionChangeComplete}
+      ></MapView>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
   map: {
-    width: 400,
-    height: 400,
+    width: "100%",
+    height: "45%",
+    zIndex: -1,
   },
 });
