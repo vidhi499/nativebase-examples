@@ -4,6 +4,8 @@ import Map from "./Map";
 import BottomBar from "./BottomBar";
 import RentalsBottomBar from "./RentalsBottomBar";
 import { useNavigation } from "@react-navigation/native";
+import GestureRecognizer from "react-native-swipe-gestures";
+
 export default function Rentals() {
   return (
     <>
