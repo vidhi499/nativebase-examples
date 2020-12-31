@@ -11,7 +11,6 @@ export const customTheme = extendTheme({
     transparent: "transparent",
     black: "#000",
     white: "#fff",
-    // primary: "#00ad93",
     primaryHoverColor: "#009c84",
     headingText: {
       50: "#F7FAFC",
