@@ -13,37 +13,17 @@ import {
   Button,
   IconButton,
 } from "native-base";
-import GestureRecognizer from "react-native-swipe-gestures";
-import { useNavigation } from "@react-navigation/native";
 
 export default function RentalsBottomBar() {
-  let navigation = useNavigation();
   return (
     <Box width="100%" bg="white" zIndex={2} bottom={0} position="absolute">
-      <Box bg="white" py={1}>
+      <Box bg="white" py={5}>
         <VStack space={3}>
-          <GestureRecognizer
-            onSwipeUp={(state) => {
-              navigation.navigate("ChooseRide");
-            }}
-            config={{
-              velocityThreshold: 0.3,
-              directionalOffsetThreshold: 50,
-            }}
-          >
-            <Row justifyContent="center">
-              <Box
-                borderBottomColor="gray.500"
-                borderBottomWidth="3px"
-                width={80}
-              ></Box>
-            </Row>
-            <Row justifyContent="center" pb={1} pt={2}>
-              <Text fontSize={16} fontWeight={400}>
-                Choose a ride, swipe up for more
-              </Text>
-            </Row>
-          </GestureRecognizer>
+          <Row justifyContent="center">
+            <Text fontSize={16} fontWeight={400}>
+              Choose a ride, swipe up for more
+            </Text>
+          </Row>
 
           <Row bg="primary" px={4} py={4}>
             <Image
