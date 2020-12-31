@@ -4,6 +4,7 @@ import BottomBar from "./BottomBar";
 import { Box, Icon, IconButton, Path } from "native-base";
 import { DrawerActions, useNavigation } from "@react-navigation/native";
 import Map from "./Map";
+import Bottom from "./Bottom";
 
 export default function Ride() {
   return (

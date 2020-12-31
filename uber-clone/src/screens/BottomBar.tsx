@@ -1,4 +1,5 @@
 import * as React from "react";
+import Bottom from "./Bottom";
 import {
   Box,
   HStack,
@@ -13,6 +14,7 @@ import {
   Button,
   IconButton,
 } from "native-base";
+import { useNavigation } from "@react-navigation/native";
 
 export default function BottomBar() {
   return (
@@ -88,11 +90,13 @@ export default function BottomBar() {
           </Row>
         </VStack>
       </Box>
+      <Bottom />
     </Box>
   );
 }
 
 function InputComponent() {
+  let navigation = useNavigation();
   return (
     <Input
       p={4}
@@ -119,7 +123,9 @@ function InputComponent() {
           </HStack>
         </Box>
       }
-      onFocus={() => {}}
+      onFocus={() => {
+        navigation.navigate("WhereTo");
+      }}
     />
   );
 }

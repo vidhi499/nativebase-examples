@@ -100,7 +100,7 @@ export default function App() {
         >
           <Drawer.Screen name="Your Trips" component={BottomTab} />
           <Drawer.Screen name="Help" component={HomeScreen} />
-          <Drawer.Screen name="Wallet" component={ChooseDestination} />
+          <Drawer.Screen name="Wallet" component={HomeScreen} />
           <Drawer.Screen name="Settings" component={Settings} />
         </Drawer.Navigator>
       </NavigationContainer>
