@@ -22,6 +22,7 @@ import Settings from "./src/screens/Settings";
 import ChooseDestination from "./src/components/ChooseDestination";
 import Map from "./src/screens/Map";
 import { customTheme } from "./src/theme/CustomTheme";
+import BottomTab from "./src/navigation/BottomTab";
 
 function HomeScreen() {
   return (
@@ -95,10 +96,9 @@ export default function App() {
       <NavigationContainer>
         <Drawer.Navigator
           drawerContent={(props) => <CustomDrawerContent {...props} />}
-          initialRouteName="Main"
+          initialRouteName="Your Trips"
         >
-          <Drawer.Screen name="Main" component={Map} />
-          <Drawer.Screen name="Your Trips" component={Map} />
+          <Drawer.Screen name="Your Trips" component={BottomTab} />
           <Drawer.Screen name="Help" component={HomeScreen} />
           <Drawer.Screen name="Wallet" component={ChooseDestination} />
           <Drawer.Screen name="Settings" component={Settings} />
