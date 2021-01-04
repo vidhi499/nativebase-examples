@@ -13,7 +13,7 @@ import {
   IconButton,
 } from "native-base";
 import { ScrollView } from "react-native-gesture-handler";
-import React, { useCallback, useMemo, useRef } from "react";
+import React, { useCallback, useMemo, useRef, useState } from "react";
 import { View, StyleSheet, SafeAreaView } from "react-native";
 import BottomSheet from "@gorhom/bottom-sheet";
 import ChooseRide from "./ChooseRide";
@@ -24,26 +24,29 @@ export default function RentalsBottomBar() {
   const bottomSheetRef = useRef<BottomSheet>(null);
   const navigation = useNavigation();
   // variables
-  const snapPoints = useMemo(() => ["40%", "70%"], []);
-
+  const snapPoints = useMemo(() => ["40%", "100%"], []);
+  const [bottom, setBottom] = useState(0);
   // callbacks
   const handleSheetChanges = useCallback((index: number) => {
-    console.log("handleSheetChanges", index);
-    if (index == 1) {
-      navigation.navigate("ChooseRide");
-    }
+    // if (index == 1) {
+    //   setBottom(0);
+    //   navigation.navigate("ChooseRide");
+    // }
+    setBottom(index);
   }, []);
 
   return (
     <>
       <BottomSheet
         ref={bottomSheetRef}
-        index={0}
+        index={bottom}
         snapPoints={snapPoints}
         onChange={handleSheetChanges}
       >
         <View>
-          <ChooseRideBottomTab />
+          {/* <ChooseRideBottomTab /> */}
+          {bottom == 1 ? <ChooseRide /> : <ChooseRideBottomTab />}
+
           {/* <Box width="100%" bg="white" zIndex={2}>
           <Box bg="white" py={5} p={0}>
             <VStack space={3}>

@@ -14,29 +14,30 @@ import {
   IconButton,
 } from "native-base";
 import { useNavigation } from "@react-navigation/native";
+import { ScrollView } from "react-native-gesture-handler";
 
 export default function ChooseRide() {
   let navigation = useNavigation();
   return (
-    <>
-      <Box width="100%" bg="white" height="100%">
+    <ScrollView>
+      <Box width="100%" bg="white" height="100%" mb={32}>
         <Box bg="white" py={5}>
           <VStack space={4}>
-            <HStack bg="black" p={6} space={20}>
-              <IconButton
+            <Row justifyContent="center" bg="black" p={6} space={20}>
+              {/* <IconButton
                 onPress={() => navigation.goBack()}
                 icon={
                   <Icon viewBox="0 0 22 22" color="gray.200">
                     <Path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z" />
                   </Icon>
                 }
-              />
+              /> */}
               <Box>
                 <Text color="white" fontSize={22}>
                   Choose a ride
                 </Text>
               </Box>
-            </HStack>
+            </Row>
             <Box p={3}>
               <Text fontSize={24} fontWeight={500}>
                 Economy
@@ -263,31 +264,6 @@ export default function ChooseRide() {
           </VStack>
         </Box>
       </Box>
-
-      <Box bottom={0} position="absolute" mt={3}>
-        <Divider borderColor="gray.500" borderWidth={0.35} />
-        <Row bg="white" px={6} pt={3}>
-          <Image
-            alt="car-image"
-            size={12}
-            source={require("../../assets/cash.png")}
-          />
-          <Row
-            justifyContent="space-between"
-            width="90%"
-            space={5}
-            pl={5}
-            pt={1}
-          >
-            <Text fontWeight={500} fontSize={16} pt={1}>
-              Cash
-            </Text>
-            <Icon viewBox="0 0 16 16" mt="5px" size={3} color="black">
-              <Path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-            </Icon>
-          </Row>
-        </Row>
-      </Box>
-    </>
+    </ScrollView>
   );
 }
