@@ -4,6 +4,7 @@ import Map from "./Map";
 import BottomBar from "./BottomBar";
 import RentalsBottomBar from "./RentalsBottomBar";
 import { useNavigation } from "@react-navigation/native";
+
 export default function Rentals() {
   return (
     <>

@@ -21,7 +21,6 @@ function HamBurger() {
   return (
     <IconButton
       onPress={() => {
-        console.log("Pressed");
         navigation.dispatch(DrawerActions.openDrawer());
       }}
       bg="white"
