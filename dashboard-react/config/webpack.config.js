@@ -451,7 +451,7 @@ module.exports = function (webpackEnv) {
               loader: require.resolve("babel-loader"),
               options: {
                 babelrc: false,
-                configFile: false,
+                configFile: false,''
                 compact: false,
                 presets: [
                   [
