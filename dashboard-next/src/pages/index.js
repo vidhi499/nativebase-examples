@@ -3,6 +3,8 @@ import React, { useEffect } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { Box, NativeBaseProvider } from "native-base";
 import { useState } from "react";
+import { theme } from "../theme/theme";
+import Dashboard from "../components/Dasboard";
 
 export default function App() {
   const [mounted, setMounted] = useState(false);
@@ -11,21 +13,8 @@ export default function App() {
   }, []);
 
   return mounted ? (
-    <NativeBaseProvider>
-      <Box width="100%" height="100%" bg="bgColor">
-        tfguyhuiji
-      </Box>
+    <NativeBaseProvider theme={theme}>
+      <Dashboard />
     </NativeBaseProvider>
   ) : null;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  text: {
-    fontSize: 16,
-  },
-});
