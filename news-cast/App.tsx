@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, View } from "react-native";
+import { SafeAreaView, StyleSheet, View } from "react-native";
 import {
   NativeBaseProvider,
   Button,
@@ -14,9 +14,12 @@ import Login from "./screens/Login";
 
 export default function App() {
   return (
-    <NativeBaseProvider theme={theme}>
-      <Login />
-    </NativeBaseProvider>
+    <>
+      <NativeBaseProvider theme={theme}>
+        <Login />
+      </NativeBaseProvider>
+      <StatusBar />
+    </>
   );
 }
 
@@ -28,8 +31,3 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 });
-
-function Demo() {
-  console.log(JSON.stringify(useTheme()));
-  return <Box>fy</Box>;
-}
