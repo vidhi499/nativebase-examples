@@ -11,6 +11,7 @@ export const customTheme = extendTheme({
     transparent: "transparent",
     black: "#000",
     white: "#fff",
+    // primary: "#00ad93",
     primaryHoverColor: "#009c84",
     headingText: {
       50: "#F7FAFC",
@@ -24,7 +25,9 @@ export const customTheme = extendTheme({
       800: "#1A202C",
       900: "#171923",
     },
-    primary: "#FC8018",
+    primary: "#F6F6F6",
+    primaryLight: "#EEEEEE",
+    primaryDark: "#2C6EF1",
   },
   components: {
     Button: {
